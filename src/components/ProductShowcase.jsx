@@ -7,7 +7,7 @@ export default function ProductShowcase() {
         <div className="grid items-start gap-10 lg:grid-cols-2">
           <div>
             <img
-              src="https://images.unsplash.com/photo-1542835435-4fa357baa00b?q=80&w=1200&auto=format&fit=crop"
+              src="/product-5l-can.svg"
               alt="Lattina di olio extravergine d'oliva Riserva Rotundo"
               className="w-full rounded-xl object-cover shadow-md"
             />

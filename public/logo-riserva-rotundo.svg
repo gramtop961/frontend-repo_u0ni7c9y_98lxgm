@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="240" height="60" viewBox="0 0 240 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Riserva Rotundo Logo">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8FB339"/>
+      <stop offset="100%" stop-color="#556B2F"/>
+    </linearGradient>
+  </defs>
+  <rect width="240" height="60" rx="12" fill="#F5F0E6"/>
+  <!-- Olive branch icon -->
+  <g transform="translate(14,12)">
+    <path d="M0 24c14-10 34-10 48 0" fill="none" stroke="url(#g1)" stroke-width="3" stroke-linecap="round"/>
+    <ellipse cx="10" cy="18" rx="6" ry="9" fill="#556B2F"/>
+    <ellipse cx="22" cy="12" rx="5" ry="8" fill="#8FB339"/>
+    <ellipse cx="36" cy="19" rx="5.5" ry="7.5" fill="#C49A6C"/>
+  </g>
+  <!-- Wordmark -->
+  <g fill="#333333" font-family="'Playfair Display', serif" font-weight="700">
+    <text x="74" y="28" font-size="18">Riserva</text>
+    <text x="74" y="48" font-size="22">Rotundo</text>
+  </g>
+</svg>

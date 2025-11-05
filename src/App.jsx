@@ -15,8 +15,11 @@ function App() {
       {/* Simple Navbar */}
       <header className="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-[#F5F0E6]">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <a href="#" className="text-xl font-bold tracking-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
-            Riserva Rotundo
+          <a href="#" className="flex items-center gap-3">
+            <img src="/logo-riserva-rotundo.svg" alt="Logo Riserva Rotundo" className="h-8 w-auto"/>
+            <span className="text-xl font-bold tracking-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
+              Riserva Rotundo
+            </span>
           </a>
           <nav className="hidden gap-6 text-sm md:flex">
             <a href="#acquista" className="hover:text-[#556B2F]">Prodotto</a>
@@ -63,8 +66,8 @@ function App() {
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1466337105551-aa3ab7890933?q=80&w=1200&auto=format&fit=crop"
-                alt="Andrea tra gli ulivi"
+                src="/story-portrait.svg"
+                alt="Ritratto stilizzato tra gli ulivi"
                 className="w-full rounded-xl object-cover shadow"
               />
             </div>
@@ -77,7 +80,10 @@ function App() {
       <footer className="border-t border-[#F5F0E6] bg-[#F5F0E6]">
         <div className="mx-auto max-w-7xl px-6 py-12 grid gap-8 md:grid-cols-4">
           <div>
-            <p className="text-lg font-semibold" style={{ fontFamily: 'Playfair Display, serif' }}>Riserva Rotundo</p>
+            <div className="flex items-center gap-3">
+              <img src="/logo-riserva-rotundo.svg" alt="Logo Riserva Rotundo" className="h-8 w-auto"/>
+              <p className="text-lg font-semibold" style={{ fontFamily: 'Playfair Display, serif' }}>Riserva Rotundo</p>
+            </div>
             <p className="mt-2 text-sm text-[#333333]/80">Olio extravergine d’oliva biologico calabrese. Lattina 5L — spedizione inclusa.</p>
           </div>
           <div>

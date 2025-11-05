@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="900" viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ritratto tra gli ulivi">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFF"/>
+      <stop offset="100%" stop-color="#F5F0E6"/>
+    </linearGradient>
+    <linearGradient id="shirt" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8FB339"/>
+      <stop offset="100%" stop-color="#556B2F"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <!-- Simplified person -->
+  <g transform="translate(600,480)">
+    <circle cx="0" cy="-160" r="80" fill="#F1D2B6"/>
+    <rect x="-140" y="-80" width="280" height="260" rx="24" fill="url(#shirt)"/>
+    <rect x="-40" y="-220" width="80" height="40" rx="8" fill="#333333"/>
+    <rect x="-20" y="-220" width="40" height="24" rx="6" fill="#222222"/>
+  </g>
+  <!-- Olive branches framing -->
+  <g fill="#556B2F" opacity="0.9">
+    <ellipse cx="120" cy="220" rx="80" ry="24"/>
+    <ellipse cx="200" cy="260" rx="70" ry="20"/>
+    <ellipse cx="1040" cy="260" rx="70" ry="20"/>
+    <ellipse cx="1120" cy="220" rx="80" ry="24"/>
+  </g>
+</svg>
