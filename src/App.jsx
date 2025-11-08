@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Hero from './components/Hero';
 import ProductShowcase from './components/ProductShowcase';
 import Bundles from './components/Bundles';
 import FAQ from './components/FAQ';
+import CheckoutForm from './components/CheckoutForm';
 
 function App() {
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const handleBuy = (product) => {
+    setSelectedProduct(product);
+    setCheckoutOpen(true);
+  };
+
   return (
     <div className="min-h-screen bg-white text-[#333333]">
       {/* Top Bar */}
@@ -27,9 +36,9 @@ function App() {
             <a href="#storia" className="hover:text-[#556B2F]">Chi siamo</a>
             <a href="#faq" className="hover:text-[#556B2F]">FAQ</a>
           </nav>
-          <a href="#acquista" className="rounded-md bg-[#556B2F] px-4 py-2 text-sm text-white hover:bg-[#465924]">
+          <button onClick={() => handleBuy({ name: 'Riserva Rotundo — EVOO Bio 5L', unit_price: 75.0, quantity: 1 })} className="rounded-md bg-[#556B2F] px-4 py-2 text-sm text-white hover:bg-[#465924]">
             Aggiungi al carrello — 75€
-          </a>
+          </button>
         </div>
       </header>
 
@@ -46,7 +55,7 @@ function App() {
             </p>
           </div>
         </section>
-        <ProductShowcase />
+        <ProductShowcase onBuy={handleBuy} />
         <Bundles />
         <section id="storia" className="bg-white">
           <div className="mx-auto max-w-5xl px-6 py-16 grid gap-10 lg:grid-cols-2">
@@ -93,8 +102,8 @@ function App() {
                 Email: Andrea Rotundo — 
                 <a href="mailto:andrearotundo3@gmail.com" className="text-[#556B2F] hover:underline">andrearotundo3@gmail.com</a>
               </li>
-              <li>Telefono: +39 000 000 000</li>
-              <li>Indirizzo: Calabria, Italia</li>
+              <li>Telefono / WhatsApp: <a href="https://wa.me/393664799796" className="text-[#556B2F] hover:underline">+39 366 479 9796</a></li>
+              <li>Indirizzo: <a href="https://maps.app.goo.gl/GAXcXRG1CtQrtLYp8" target="_blank" rel="noreferrer" className="text-[#556B2F] hover:underline">Catanzaro, Calabria, Italia</a></li>
               <li>Orari: Lun–Ven 9:00–18:00</li>
             </ul>
           </div>
@@ -102,6 +111,7 @@ function App() {
             <p className="font-semibold">Policy</p>
             <ul className="mt-2 space-y-1 text-sm text-[#333333]/80">
               <li>Spedizioni: incluse, 3–5 giorni</li>
+              <li>Corriere: Bartolini (BRT)</li>
               <li>Resi & Rimborsi: entro 7 giorni per prodotti danneggiati</li>
               <li>Privacy: GDPR compliant</li>
             </ul>
@@ -119,6 +129,8 @@ function App() {
           © {new Date().getFullYear()} Famiglia Rotundo — Tutti i diritti riservati
         </div>
       </footer>
+
+      <CheckoutForm isOpen={checkoutOpen} onClose={() => setCheckoutOpen(false)} product={selectedProduct} />
     </div>
   );
 }

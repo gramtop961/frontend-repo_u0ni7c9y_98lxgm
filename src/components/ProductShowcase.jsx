@@ -1,6 +1,12 @@
 import React from 'react';
 
-export default function ProductShowcase() {
+export default function ProductShowcase({ onBuy }) {
+  const product = {
+    name: 'Riserva Rotundo — EVOO Bio 5L',
+    unit_price: 75.0,
+    quantity: 1,
+  };
+
   return (
     <section id="acquista" className="bg-white">
       <div className="mx-auto max-w-7xl px-6 py-16">
@@ -24,7 +30,10 @@ export default function ProductShowcase() {
                 <span className="text-2xl font-semibold text-[#556B2F]">75,00 €</span>
                 <span className="text-sm text-[#333333]/70">15,00 €/L — Spedizione inclusa</span>
               </div>
-              <button className="mt-4 w-full rounded-md bg-[#556B2F] px-5 py-3 text-white hover:bg-[#465924] transition">
+              <button
+                onClick={() => onBuy && onBuy(product)}
+                className="mt-4 w-full rounded-md bg-[#556B2F] px-5 py-3 text-white hover:bg-[#465924] transition"
+              >
                 Aggiungi al carrello — 75€
               </button>
               <p className="mt-3 text-sm text-[#333333]/70">Consegna standard in 3–5 giorni lavorativi.</p>
