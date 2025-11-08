@@ -89,7 +89,10 @@ function App() {
           <div>
             <p className="font-semibold">Contatti</p>
             <ul className="mt-2 space-y-1 text-sm text-[#333333]/80">
-              <li>Email: info@riservarotundo.it</li>
+              <li>
+                Email: Andrea Rotundo — 
+                <a href="mailto:andrearotundo3@gmail.com" className="text-[#556B2F] hover:underline">andrearotundo3@gmail.com</a>
+              </li>
               <li>Telefono: +39 000 000 000</li>
               <li>Indirizzo: Calabria, Italia</li>
               <li>Orari: Lun–Ven 9:00–18:00</li>
