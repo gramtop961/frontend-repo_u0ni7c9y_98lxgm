@@ -14,10 +14,12 @@ export default function CheckoutForm({ isOpen, onClose, product }) {
     quantity: product?.quantity || 1,
   });
 
+  const qty = useMemo(() => Math.max(1, Number(form.quantity) || 1), [form.quantity]);
+  const liters = useMemo(() => qty * 5, [qty]); // ogni lattina è 5L
+
   const totalPrice = useMemo(() => {
-    const qty = Number(form.quantity) || 1;
     return (product?.unit_price || 0) * qty;
-  }, [form.quantity, product]);
+  }, [qty, product]);
 
   React.useEffect(() => {
     // Reset quantity when product changes
@@ -37,7 +39,7 @@ export default function CheckoutForm({ isOpen, onClose, product }) {
     e.preventDefault();
     const payload = {
       product_name: product?.name || 'Riserva Rotundo 5L',
-      quantity: Number(form.quantity) || 1,
+      quantity: qty,
       total_price: totalPrice,
       full_name: form.full_name,
       email: form.email,
@@ -80,15 +82,19 @@ export default function CheckoutForm({ isOpen, onClose, product }) {
         <form onSubmit={handleSubmit} className="grid gap-4 px-6 py-6 sm:grid-cols-2">
           <div className="sm:col-span-2">
             <label className="block text-sm font-medium">Quantità</label>
-            <input
-              type="number"
-              min="1"
-              name="quantity"
-              value={form.quantity}
-              onChange={handleChange}
-              className="mt-1 w-full rounded-md border border-[#E8E1D5] px-3 py-2 focus:border-[#556B2F] focus:outline-none"
-              required
-            />
+            <div className="mt-1 flex items-center gap-3">
+              <input
+                type="number"
+                min="1"
+                name="quantity"
+                value={form.quantity}
+                onChange={handleChange}
+                className="w-32 rounded-md border border-[#E8E1D5] px-3 py-2 focus:border-[#556B2F] focus:outline-none"
+                required
+              />
+              <span className="text-sm text-[#333333]/80">Totale: <strong>{liters} L</strong></span>
+            </div>
+            <p className="mt-1 text-xs text-[#333333]/60">Ogni lattina contiene 5 litri. Il totale si aggiorna automaticamente.</p>
           </div>
 
           <div>
@@ -133,8 +139,8 @@ export default function CheckoutForm({ isOpen, onClose, product }) {
             <label htmlFor="newsletter" className="text-sm">Voglio ricevere aggiornamenti e offerte</label>
           </div>
 
-          <div className="sm:col-span-2 flex items-center justify-between border-t pt-4">
-            <p className="text-sm text-[#333333]/80">Totale: <span className="text-lg font-semibold text-[#556B2F]">€{totalPrice.toFixed(2)}</span> (spedizione inclusa)</p>
+          <div className="sm:col-span-2 flex flex-col sm:flex-row sm:items-center sm:justify-between border-t pt-4 gap-2">
+            <p className="text-sm text-[#333333]/80">Totale: <span className="text-lg font-semibold text-[#556B2F]">€{totalPrice.toFixed(2)}</span> — {liters} L (spedizione inclusa)</p>
             <div className="flex gap-3">
               <button type="button" onClick={onClose} className="rounded-md border border-[#C49A6C] px-5 py-2 text-[#C49A6C] hover:bg-[#C49A6C]/10">Annulla</button>
               <button type="submit" className="rounded-md bg-[#556B2F] px-5 py-2 text-white hover:bg-[#465924]">Invia ordine</button>
