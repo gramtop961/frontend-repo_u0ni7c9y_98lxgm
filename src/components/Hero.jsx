@@ -25,8 +25,8 @@ export default function Hero() {
         </div>
         <div className="mt-12 hidden flex-1 justify-end lg:flex">
           <img
-            src="/hero-olive-grove.svg"
-            alt="Uliveto calabrese stilizzato"
+            src="https://images.unsplash.com/photo-1517260913320-4f3939780f04?auto=format&fit=crop&w=1200&q=80"
+            alt="Uliveto calabrese con alberi di ulivo"
             className="h-[380px] w-full max-w-xl rounded-xl object-cover shadow-lg"
           />
         </div>

@@ -13,8 +13,8 @@ export default function ProductShowcase({ onBuy }) {
         <div className="grid items-start gap-10 lg:grid-cols-2">
           <div>
             <img
-              src="/product-5l-can.svg"
-              alt="Lattina di olio extravergine d'oliva Riserva Rotundo"
+              src="https://images.unsplash.com/photo-1598591664010-be1846caa9a6?auto=format&fit=crop&w=1200&q=80"
+              alt="Alberi di ulivo e lattina di olio extravergine d'oliva Riserva Rotundo"
               className="w-full rounded-xl object-cover shadow-md"
             />
           </div>
@@ -36,7 +36,7 @@ export default function ProductShowcase({ onBuy }) {
               >
                 Aggiungi al carrello — 75€
               </button>
-              <p className="mt-3 text-sm text-[#333333]/70">Consegna standard in 3–5 giorni lavorativi.</p>
+              <p className="mt-3 text-sm text-[#333333]/70">Consegna standard in 3–5 giorni lavorativi con GLS o Bartolini (BRT).</p>
             </div>
 
             <div className="mt-8 grid gap-6 sm:grid-cols-2">
@@ -75,7 +75,7 @@ export default function ProductShowcase({ onBuy }) {
                 <ul className="mt-2 list-disc space-y-1 pl-5 text-[#333333]/80">
                   <li>Lattina metallica alimentare 5L con tappo ermetico</li>
                   <li>Packaging esterno in cartone riciclabile</li>
-                  <li>Spedizione inclusa — consegna 3–5 giorni</li>
+                  <li>Spedizione inclusa — consegna 3–5 giorni con GLS o Bartolini (BRT)</li>
                 </ul>
               </div>
             </div>

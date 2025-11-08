@@ -75,8 +75,8 @@ function App() {
             </div>
             <div>
               <img
-                src="/story-portrait.svg"
-                alt="Ritratto stilizzato tra gli ulivi"
+                src="https://images.unsplash.com/photo-1598198424894-abfdb0419b8f?auto=format&fit=crop&w=1200&q=80"
+                alt="Ritratto tra gli ulivi calabresi"
                 className="w-full rounded-xl object-cover shadow"
               />
             </div>
@@ -111,7 +111,7 @@ function App() {
             <p className="font-semibold">Policy</p>
             <ul className="mt-2 space-y-1 text-sm text-[#333333]/80">
               <li>Spedizioni: incluse, 3–5 giorni</li>
-              <li>Corriere: Bartolini (BRT)</li>
+              <li>Corriere: GLS o Bartolini (BRT)</li>
               <li>Resi & Rimborsi: entro 7 giorni per prodotti danneggiati</li>
               <li>Privacy: GDPR compliant</li>
             </ul>
